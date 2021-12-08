@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+<h3 id="titlefont">Song Reviews</h3>
+<li class="nav-item" id="filter" style="list-style: none;">
+	<form class="" action="/get_filter" method="post">
+		<div class="input-group mb-3">
+		  <input type="text" id="filtterm" name="filtterm" class="form-control" placeholder="Song Title" aria-label="Username" aria-describedby="basic-addon1">
+			<button class="btn btn-primary" id="filtbut" type="submit" name="Submit" value="">Filter</button>
+		</div>
+	</form>
+</li>
+
+
+<div class="container">
+
+	<table class="table table-bordered" id="songs_table">
+		<tr id = "padrow">
+			<th>Song</th>
+			<th>Review</th>
+			<th>Review date</th>
+		</tr>
+
+		<%
+		if (songs) {
+		    var table = '';
+		  	songs.forEach(function(item){
+
+		       table += '<tr> <td>' + item.songtitle + '</td> <td>' + item.review + '</td> <td>' + item.reviewdate + '</td> </tr>';
+
+		     }); %>
+		     <%- table %>
+		<% } %>
+
+	</table>
+
+</div>
+
+
+<%- include('../partials/footer') %>

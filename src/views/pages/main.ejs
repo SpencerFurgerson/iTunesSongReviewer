@@ -1,0 +1,70 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+<li class="nav-item" id="searchPlace" style="list-style: none;">
+	<form class="" action="/get_search" method="post">
+		<input class="btn btn-outline-light my-2 my-sm-0" name="search" id="search" type="text" placeholder="Search for a song...">
+		<button class="btn btn-outline-light my-2 my-sm-0" onclick="makeAPICall('')" type="submit" name="Submit" value="">Search</button>
+	</form>
+</li>
+
+<%
+  if (items) {
+
+	var cards = '';
+	//<!-- Iterate the items object & update the cards variable -->
+
+    cards += '<div class="container" id="cards">'
+      cards += '<div class="row">'
+      for (let j = 0; j < 1; j++)
+      {
+				cards +=  '<div class="card" id="cardStyle" style="width: 30rem;"><div class="card-body"><img src="'+ items[j].artworkUrl100+'" alt="" width=200px><h4 id="songTitle" name="songTitle" class="card-title">'+items[j].trackName+'</h4><div class="row"><div class="col-4"><button type="button" class="btn btn-primary" name="button"><a target="_blank" href="'+items[j].artistViewUrl+'">Artist Site</a></button></div><div class="col-4"><button id="reviewBut" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Review</button></div></div><h5 id="type">Type</h5><h6>'+items[j].kind+'</h6><h5>Genres</h5><h6>'+items[j].primaryGenreName+'</h6><h5>Release date</h5><h6>'+items[j].releaseDate+'</h6></div></div>'
+      }
+      '</div>'
+    '</div>'
+
+%>
+    <%- cards %>
+<% } %>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" id="insideMod">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+				<div class="row">
+					<div class="col-4">
+
+
+						<h6 id="songText">Song Name</h6>
+
+						<h6 id="enterText">Enter Your Review Here</h6>
+
+					</div>
+					<div class="col-8">
+						<form class="" action="/main/postreview" method="post">
+
+							<h6 name='songNamer' id="songName"> <%- songName %> </h6>
+							<Input type="hidden" name="songNamer" value="<%- songName %>" />
+							<textarea name="reviewBox" id="reviewBox" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
+							<button type="submit" id="postBut" class="btn btn-primary">Post</button>
+
+						</form>
+
+					</div>
+
+				</div>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

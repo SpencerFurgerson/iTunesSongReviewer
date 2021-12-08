@@ -1,0 +1,129 @@
+/* Add any css you want to use for you website here */
+#student_status{
+	visibility:hidden;
+	height:0px;
+}
+
+#undergrad_select{
+	visibility:hidden;
+	height:0px;
+}
+
+#grad_select{
+	visibility:hidden;
+	height:0px;
+}
+
+#searchPlace {
+	background-color: #071452;
+	padding-left: 35vw;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+}
+
+#search {
+	padding-left: 10vw;
+	padding-right: 10vw;
+}
+
+.nav-link {
+	color: white;
+}
+
+#titlefont {
+	text-align: center;
+	margin-top: 5vw;
+}
+
+#filter {
+	margin-left: 30vw;
+	margin-right: 30vw;
+	margin-top: 1vw;
+
+}
+
+#filtbut {
+	margin-left: 1vw;
+	padding-left: 2vw;
+	padding-right: 2vw;
+}
+
+a {
+	color: white;
+}
+
+a:hover {
+	color: white;
+}
+
+#type {
+	margin-top: 2vw;
+}
+
+#cards {
+	margin-top: 3vw;
+	margin-bottom: 8vw;
+	margin-left: 37vw;
+}
+
+#songTitle {
+	margin-top: 2vw;
+}
+
+#insideMod {
+	padding: 2vw;
+}
+
+#reviewBox {
+
+		margin-top: 2vw;
+}
+
+#enterText {
+	margin-top: 2.5vw;
+	border: 1px solid grey;
+	border-radius: 3px;
+	padding: 1vw;
+}
+
+#songText, #songName {
+	border: 1px solid grey;
+	border-radius: 3px;
+	padding: 1vw;
+}
+
+#songName {
+	background-color: #e6e6e6;
+	border: 1px solid grey;
+}
+
+#postBut {
+	padding-left: 2vw;
+	padding-top: 1vw;
+	padding-right: 2vw;
+	padding-bottom: 1vw;
+	margin-left: 80%;
+	margin-top: 1vw;
+}
+
+#navBar {
+	background-color: #071452;
+}
+
+#reviewBut {
+	margin-right: 30%;
+}
+
+#cardStyle {
+	background-color: #e0ecff;
+}
+
+#topHead {
+	margin-left: 35vw;
+	color: white;
+	margin-top: 10px;
+}
+
+#reviewBox {
+	border-radius: 2px;
+}
